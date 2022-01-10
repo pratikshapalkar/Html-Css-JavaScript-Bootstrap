@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: lightpink;
+        }
+
+        #cal{
+            width: 250px;
+            
+            padding: 10px;
+            margin: auto;
+        }
+
+        .container {
+            width: 300px;
+            height: 530px;
+            margin: auto;
+
+            padding: 20px;
+        }
+
+        input {
+            width: 30px;
+            background-color: lightseagreen;
+            color: white;
+            border: 3px solid gray;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px;
+            font-size: 15px;
+        }
+
+        #clear {
+            width: 270px;
+            border: 3px solid gray;
+            border-radius: 3px;
+            padding: 10px;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Calculator using JavaScript</h2>
+    <div class="container">
+        <form name="form1">
+            <input type="text" name="answer" id="cal">
+            <br><br>
+            <input type="button" value="1" onclick="operation('1')" />
+            <input type="button" value="2" onclick="operation('2')" />
+            <input type="button" value="3" onclick="operation('3')" />
+            <input type="button" value="+" onclick="operation('+')" />
+            <br><br>
+            <input type="button" value="4" onclick="operation('4')" />
+            <input type="button" value="5" onclick="operation('5')" />
+            <input type="button" value="6" onclick="operation('6')" />
+            <input type="button" value="-" onclick="operation('-')" />
+            <br><br>
+            <input type="button" value="7" onclick="operation('7')" />
+            <input type="button" value="8" onclick="operation('8')" />
+            <input type="button" value="9" onclick="operation('9')" />
+            <input type="button" value="/" onclick="operation('/')" />
+            <br><br>
+            <input type="button" value="0" onclick="operation('0')" />
+            <input type="button" value="*" onclick="operation('*')" />
+            <input type="button" value="=" onclick="solve()" />
+            <input type="button" value="." onclick="operation('.')" />
+            <!-- <input type="button" value="B" onclick="form1.answer.value+='B'"> -->
+            <br><br>
+            <input type="button" value="clear" onclick="clr()" id="clear">
+
+
+        </form>
+    </div>
+    <script type="text/javascript">
+        function operation(val) {
+            document.getElementById("cal").value += val;
+        }
+        function solve() {
+            var x = document.getElementById("cal").value
+            var y = eval(x)
+            document.getElementById("cal").value = y
+        }
+        function clr() {
+            document.getElementById("cal").value = ""
+        }
+    </script>
+</body>
+
+</html>
