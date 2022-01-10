@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-demo-1</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var Car={
+            car_name : "BMW<br/>",
+            car_model : "Model1.02<br/>",
+            car_price : 70000000,
+            testcar : function()
+             {
+                return "<h2>This is testing car...</h2>";
+            }
+
+        }
+        document.write(Car.testcar());
+        document.write("Car model: "+Car.car_model+"Car name: "+Car.car_name+"Car price: "+Car.car_price);
+    </script>
+    
+</body>
+</html>
