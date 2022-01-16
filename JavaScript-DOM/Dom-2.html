@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-2</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <p></p>
+    <p id="date"></p>
+    <img src="index.png" id="jsImage"> 
+          <!-- imgae will change by scr attribute -->
+    <div class="javascript"></div>
+    <script type="text/javascript">
+        //get date by date object in paragraph
+        
+         document.getElementById("date").innerHTML="Date is: " + Date();
+        document.getElementById("jsImage").src="myimage.jpg";
+        document.getElementById("demo").innerHTML="Hello welcome to javascript.."
+        var element=document.getElementsByTagName("p");
+        document.write(element.innerHTML="this is paragraph <br>");
+        var class1=document.getElementsByClassName(".javascript");
+        document.write(class1.innerHTML="this is first div.")
+       
+       
+       
+       
+
+    </script>
+</body>
+</html>
