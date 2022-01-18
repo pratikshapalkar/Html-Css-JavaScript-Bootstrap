@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Move-By-Keyboard</title>
     <style>
-       
-#box {
-    position:absolute;
-    height: 50px;
+        .circle {
+            position: absolute;
+            height: 50px;
             width: 50px;
             border-radius: 50%;
             background-color: green;
-}
+        }
     </style>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
+
 <body>
-    
-        <div id="box" border='0'></div>
-    
-<script>
-    var pane = $('#pane'),
-    box = $('#box'),
-    wh = pane.width() - box.width(),
-    wv = pane.height() - box.height(),
-    d = {},
-    x = 5;
+    <div class="frame">
+        <div class="circle" border='0' id="circle"></div>
+    </div>
 
-    function newh(v,a,b) {
-        var n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
-        return n < 0 ? 0 : n > wh ? wh : n;
-    }
-
-    function newv(v,a,b) {
-        var n = parseInt(v, 10) - (d[a] ? x : 0) + (d[b] ? x : 0);
-        return n < 0 ? 0 : n > wv ? wv : n;
-    }
-
-    $(window).keydown(function(e) { d[e.which] = true; });
-    $(window).keyup(function(e) { d[e.which] = false; });
-
-    setInterval(function() {
-        box.css({
-            left: function(i,v) { return newh(v, 37, 39); },
-            top: function(i,v) { return newv(v, 38, 40); }
+    <script>
+        let circle = document.querySelector('.circle');
+        let moveBy = 20;
+        let frame = window.innerWidth
+        window.addEventListener('load', () => {
+            circle.style.position = 'absolute';
+            circle.style.left = 0;
+            circle.style.top = 0;
         });
-        wh = pane.width() - box.width();
-        wv = pane.height() - box.height();
-    }, 20);
 
-</script>
+
+        window.addEventListener('keyup', (e) => {
+            switch (e.key) {
+                
+                case 'ArrowLeft':
+                    circle.style.left = parseInt(circle.style.left) - moveBy + 'px';
+                    document.getElementById("circle").innerHTML = parseInt(circle.style.left) - moveBy + 'px';
+                    
+                    if (document.getElementById("circle").innerHTML=='-20px' || document.getElementById("circle").innerHTML=='-40px') {
+                        alert("can't move now");
+                    }
+                    break;
+
+                case 'ArrowRight':
+                    circle.style.left = parseInt(circle.style.left) + moveBy + 'px';
+                    document.getElementById("circle").innerHTML = parseInt(circle.style.left) + moveBy + 'px';
+
+                    if (document.getElementById("circle").innerHTML=='1260px' || document.getElementById("circle").innerHTML=='0px') {
+                        alert("can't move now");
+                    }
+                    break;
+                case 'ArrowUp':
+                    circle.style.top = parseInt(circle.style.top) - moveBy + 'px';
+                    document.getElementById("circle").innerHTML = parseInt(circle.style.top) - moveBy + 'px';
+
+                    if (document.getElementById("circle").innerHTML=='-20px' || document.getElementById("circle").innerHTML=='-40px') {
+                        alert("can't move now");
+                    }
+                    break;
+                case 'ArrowDown':
+                    circle.style.top = parseInt(circle.style.top) + moveBy + 'px';
+                    document.getElementById("circle").innerHTML = parseInt(circle.style.top) + moveBy + 'px';
+
+                    if (document.getElementById("circle").innerHTML=='620px') {
+                        alert("can't move now");
+                    }
+                    break;
+            }
+        });
+
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // if you want to apply multiple events on same id or class then use on event
+        $(document).ready(function () {
+            $("#div").on(
+            {
+                click: function () {
+                    $(this).css("background-color", "red");
+                },
+                mouseenter: function () {
+                    $(this).css("background-color", "green");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "yellow");
+                }
+
+            })
+        })
+        
+
+    </script>
+</head>
+
+<body>
+    <p id="para">This is paragraph..</p>
+    <button type="button" id="btn">Click Me</button>
+    <br>
+    <br>
+    <div id="div" style="background-color: blue ; height: 200px; width: 200px;text-align: center;"></div>
+    
+</body>
+
+</html>

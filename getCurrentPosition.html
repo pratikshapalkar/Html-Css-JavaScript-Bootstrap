@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <style>
+        
+        .box {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p></p>
+    <script>
+//     var p = $( "div" ).first();
+// var position = p.position();
+// $( "div" ).last().text( "left: " + position.left + ", top: " + position.top );
+var div = document.querySelector('.box');
+var divOffset = offset(div);
+console.log(divOffset.left, divOffset.top);
+    </script>
+</body>
+</html>

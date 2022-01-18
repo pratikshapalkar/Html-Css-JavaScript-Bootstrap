@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <p id="para">This is paragraph..</p>
+    <button type="button" id="btn">Click Me</button>
+    <br>
+    <br>
+    <div id="div" style="background-color: blue ; height: 200px; width: 200px;text-align: center;"></div>
+    <script>
+        $("#btn").click(function() {   //dblclick for double click
+            $("#para").hide();
+        }) // we can hide button using this ...this is hide current selected id .
+    </script>
+    <script>
+        $("#div").mouseenter(function() {   // same as mouseleave when we leave mouse after enter into div it hides paragraph
+            $("#para").hide();
+        }) 
+    </script>
+    <script>
+        $("#div").hover(function ()
+        {
+            $("#para").hide();
+        },
+        function(){
+            $("#para").show();
+        })
+    </script>
+    
+   
+</body>
+</html>
